@@ -1,0 +1,295 @@
+body,ul,form {
+    margin: 0px;
+    padding: 0px
+}
+ul {list-style: none}
+
+header {
+    background-color: #2f364a;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 45px
+}
+.about {
+    display: flex;
+    height: 45px;
+    margin: 0px;
+    padding: 0px
+}
+.about li {
+    display: flex;
+    align-items: center;
+    color: rgba(120, 130, 157, 0.8);
+    height: 45px;
+    padding: 0px 20px
+}
+.about li:last-child {
+    background-image: url(avatar-01.png);
+    background-position: 8% 50%;
+    background-repeat: no-repeat;
+    justify-content: center;
+    width: 130px
+}
+.about li:hover {
+    background-color: #15a4fa;
+    color: white
+}
+
+sidebar {
+    float: left;
+    background-color: rgba(24, 30, 44, 0.8);
+    width: 15.2%;
+    height: 900px
+}
+sidebar form {
+    background-color: #1f2637;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 138px
+}
+sidebar form button {
+    background-color: #f2795a;
+    border: 1px solid #f2795a;
+    border-radius: 2px;
+    width: 80%;
+    height: 44px;
+    font-family: ProximaNova;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px
+}
+button:before {
+    background-color: white;
+    display: inline-block;
+    content: "";
+    margin-right: 10px;
+    width: 13px;
+    height: 13px;
+    clip-path: polygon(0% 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%)
+}
+sidebar nav {background-color: #1f2637}
+sidebar .first-menu {
+    width: 100%;
+    height: 241px;
+    margin: 4px 0px
+}
+sidebar li {
+    font-family: ProximaNova;
+    color:  #78829d;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    position: relative;
+    padding-left: 50px
+}
+sidebar .first-menu-list-item:first-child {
+    background-image: url(1.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+sidebar .first-menu-list-item:nth-child(2) {
+    background-image: url(2.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+sidebar .first-menu-list-item:nth-child(3) {
+    background-image: url(3.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+sidebar .first-menu-list-item:nth-child(4) {
+    background-image: url(4.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+sidebar .first-menu-list-item:nth-child(5) {
+    background-image: url(5.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+sidebar .first-menu-list-item:last-child {
+    background-image: url(6.png);
+    background-position: 18px 50%;
+    background-repeat: no-repeat
+}
+.first-menu-list-item:hover {
+    background-color: #15a4fa;
+    color: white
+}
+sidebar .second-menu {
+    margin-bottom: 4px;
+    width: 100%;
+    height: 183px
+}
+sidebar .second-menu-list-item:before {
+    display: inline-block;
+    content: "";
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 22px; 
+    bottom: calc(50% - 3px);
+}
+sidebar .second-menu-list-item:first-child:before  {background-color: #e64c66}
+sidebar .second-menu-list-item:nth-child(2):before {background-color: #ffab00}
+sidebar .second-menu-list-item:nth-child(3):before {background-color: #00bfdd}
+sidebar .second-menu-list-item:last-child:before   {background-color: #7874cf}
+
+.thrid-menu {height: 348px}
+.thrid-menu-list-item  {
+    background-image: url(7.png);
+    background-position: 18px 10%;
+    background-repeat: no-repeat;
+    padding-left: 0px
+}
+.thrid-menu-list-item li {margin-bottom: 10px} 
+
+
+
+main {
+    float: right;
+    width: 84.8%;
+}
+.main-header {
+    background-color: #eef1f7;
+    width: 100%;
+}
+.main-header-title {
+    box-sizing: border-box;
+    height: 70px;
+    padding: 25px;
+    font-family: ProximaNova;
+    color:  #444c63;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+.main-header p {
+    font-family: ProximaNova;
+    color: #444c63;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    margin: 0px
+}
+.main-header-navigation {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0px
+}
+.main-header-navigation-menu {float: left}
+.main-header-navigation-menu-list {
+    font-family: ProximaNova;
+    color: #8c97b2;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 26px; 
+    text-align: left
+}
+.main-header-navigation-menu-list-item {
+    display: inline-block;
+    border-radius: 15px;
+    margin-left: 15px;
+    width: 100px;
+    text-align: center
+}
+.main-header-navigation-menu-list-item:hover {
+    background-color: #97b3ce;
+    color: white
+}
+.main-header-navigation form {
+    float: right;
+    width: 30.3%;
+    height: 32px
+}
+.main-header-navigation form input{
+    box-sizing: border-box;
+    background-image: url(7.png);
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: 1px solid rgba(140, 151, 178, 40);
+    width: 100%;
+    height: 32px;
+    padding-left: 10px;
+    outline: none
+}
+.main-header-navigation:after {
+    display: block;
+    content: "";
+    clear: both
+}
+.main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+    height: 780px
+}
+.book-container {margin: 20px}
+.book-name {
+    font-family: ProximaNova;
+    color: #444c63;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 0px
+}
+.author {
+    font-family: ProximaNova;
+    color: #6f7d95;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    margin: 0px
+}
+.rating {float: left}
+.rating input {display: none}
+.rating label {
+    content: url(ico1.png);
+    float: right;
+    width: 14px;
+    height: 14px
+}
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {content: url(ico.png)}
+
+
+footer {
+    background-color: #181e2c;
+    width: 100%;
+    height: 45px;
+    clear: both;
+    display: flex;
+    justify-content: flex-end
+}
+.settings, .help {
+    width: 55px;
+    height: 45px
+}
+.settings:hover, .help:hover {background-color: #15a4fa}
+.settings {
+    background-image: url(9.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat
+}
+.help {
+    background-image: url(8.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat
+}
