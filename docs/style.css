@@ -43,7 +43,7 @@ sidebar {
     width: 15.2%;
     height: 900px
 }
-sidebar form {
+sidebar .wrapper-add-a-book {
     background-color: #1f2637;
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@ sidebar form {
     width: 100%;
     height: 138px
 }
-sidebar form button {
+sidebar .add-a-book {
     background-color: #f2795a;
     border: 1px solid #f2795a;
     border-radius: 2px;
@@ -62,9 +62,13 @@ sidebar form button {
     color:  #ffffff;
     font-size: 14px;
     font-weight: 700;
-    line-height: 26px
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
-button:before {
+.add-a-book:hover {cursor:pointer}
+.add-a-book:before {
     background-color: white;
     display: inline-block;
     content: "";
@@ -163,6 +167,7 @@ main {
     width: 100%;
 }
 .main-header-title {
+    border-top: 1px solid #e5e5e5;
     box-sizing: border-box;
     height: 70px;
     padding: 25px;
@@ -183,8 +188,8 @@ main {
     margin: 0px
 }
 .main-header-navigation {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
     padding: 20px 0px
 }
 .main-header-navigation-menu {float: left}
@@ -203,7 +208,8 @@ main {
     width: 100px;
     text-align: center
 }
-.main-header-navigation-menu-list-item:hover {
+.main-header-navigation-menu-list-item:hover {cursor: pointer;}
+.selected {
     background-color: #97b3ce;
     color: white
 }
@@ -267,7 +273,10 @@ main {
 }
 .rating label:hover,
 .rating label:hover ~ label,
-.rating input:checked ~ label {content: url(ico.png)}
+.rating input:checked ~ label {
+    content: url(ico.png);
+    cursor: pointer
+}
 
 
 footer {
@@ -293,3 +302,64 @@ footer {
     background-position: 50% 50%;
     background-repeat: no-repeat
 }
+
+.new-book-wrapper {
+    background-color: rgba(120, 130, 157, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+.new-book {
+    background-color: rgba(255,255,255);
+    border: 3px solid #4CAF50;
+    border-radius: 7px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50%)
+  }
+  .close-button {
+    background-image: url(close-button-png-30242.png);
+    background-size: cover;
+    float: right;
+    width: 25px;
+    height: 25px
+  }
+.close-button:hover {cursor: pointer}
+.new-book label {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-left: 15px
+  }
+.new-book input {
+    margin-top: 30px;
+    margin-left: 100px;
+    outline: none
+  }
+.new-book input:not([type = "file"]) {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 5px;
+    width: 220px;
+    height: 30px;
+  }
+.new-book input:not([type = "file"]):focus {box-shadow: 0 0 5px #1E90FF}
+.new-book .submit {
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 100px;
+    padding-left: 5px;
+    width: 100px;
+    height: 45px;
+  }
+  .new-book .submit:hover {cursor: pointer}
+
