@@ -11,6 +11,7 @@ function Calculator() {
 function ExtendedCalculator() {
 	Calculator.call(this);
   this.log = function() {this._currentState = Math.log(this.arg)}
+  this.exponentiation = function() {this._currentState = Math.pow(this._currentState,this.arg)}
   var parentGetResult = this.getResult();
   this.getResult = function() {
   	var name = prompt("Name?")
