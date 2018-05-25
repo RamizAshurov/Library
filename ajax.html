@@ -11,7 +11,7 @@
       		var xhr = new XMLHttpRequest();
       		xhr.open("GET","https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json",true);	
           xhr.send()
-					xhr.onreadystatechange = function() {
+		xhr.onreadystatechange = function() {
             if(xhr.readyState != 4 ) return
             button.remove();
             if (xhr.status != 200) {
