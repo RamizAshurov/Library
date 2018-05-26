@@ -1,0 +1,15 @@
+[{
+    "id"   :1,
+    "name" :"Jewels of Nezam",
+    "price":24
+},
+{
+    "id"   :2,
+    "name" :"Cakes & Bakes",
+    "price":27
+},
+{
+    "id"   :3,
+    "name" :"Jamie's Kitchen",
+    "price":23
+}]

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span {
+            border-right: 1px solid #0289b0;
+            color: #0289b0;
+            padding: 0 5px 
+        }
+        span:hover {
+            color: #0056b3;
+            cursor: pointer;
+            text-decoration: underline 
+        }
+    </style>
+</head>
+<body>
+    <form action = "books" method = "post" onSubmit = "return false" id = "myForm">
+        <label for = "bookName">Название книги</label><br>
+        <input type = "text" id = "bookName" name = "bookName" required><br><br>
+        <label for = "bookPrice">Цена</label><br>
+        <input type = "number" min = "0" id = "bookPrice" name = "bookPrice" required><br><br>
+        <input type = "submit" value = "Добавить" onClick = "postBook()">
+        <input type = "submit" value = "Изменить" onClick = "changeBook()"><br><br>
+    </form>
+    <span onClick = "getBooks()">Books List</span>
+    <span onClick = "getBook()">Book</span>
+    <span onClick = "deleteBook()">Delete book</span>
+    <span onClick = "getFreeBooks()">Free Books</span>
+    <ul id = "list"></ul>
+    <script>
+        function getBooks() {
+            var request = new XMLHttpRequest();
+            request.open("GET","books",true);
+            request.send();
+            request.onreadystatechange = function() {
+                if (request.readyState != 4) return
+                showBooks(request.responseText)
+            }
+        }
+        function getFreeBooks() {
+            var request = new XMLHttpRequest();
+            request.open("GET","booksfree",true);
+            request.send();
+            request.onreadystatechange = function() {
+                if (request.readyState != 4) return
+                showBooks(request.responseText)
+            }  
+        }
+        function getBook() {
+            var id = +prompt("Book number"),
+                request = new XMLHttpRequest();
+            request.open("GET","books/" + id,true);
+            request.send();
+            request.onreadystatechange = function() {
+                if (request.readyState != 4) return
+                showBooks(request.responseText)
+            }
+        }
+        function deleteBook() {
+            var id = +prompt("Book number"),
+                request = new XMLHttpRequest();
+            request.open("DELETE","books/" + id,true);
+            request.send();
+            request.onreadystatechange = function() {
+                if (request.readyState != 4) return
+                showBooks(request.responseText)
+            }
+        }
+        function postBook() {
+            var request = new XMLHttpRequest(),
+                body = "bookName=" + encodeURIComponent(bookName.value) + "&bookPrice=" + encodeURIComponent(bookPrice.value);
+            request.open("POST", myForm.action, true);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            request.send(body);
+            bookName.value = "";
+            bookPrice.value = 0;
+            request.onreadystatechange = function() {
+                if (request.readyState != 4 && request.status == 200) return;
+                showBooks(request.responseText)
+            }
+        }
+        function changeBook() {
+            var id = +prompt("Book number"),
+                request = new XMLHttpRequest(),
+                body = "bookName=" + encodeURIComponent(bookName.value) + "&bookPrice=" + encodeURIComponent(bookPrice.value);
+            request.open("PUT", "books/" + id, true);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            request.send(body);
+        }
+        function showBooks(books) {
+            list.innerHTML = "";
+            books = books.split("\n");
+            for (var i = 0; i < books.length; i++) {
+                var li = list.appendChild(document.createElement("li"))
+                li.innerHTML = books[i]
+            }
+        }
+    </script>
+</body>
+</html>
